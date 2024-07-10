@@ -29,31 +29,32 @@ export default function Home() {
         <h1 className={styles.center}>
         Hunting Coder
         </h1>
-            <p >
+            <p className={styles.center} >
               A Blog for Hunting Coder By a hunting coder
             </p>
+            <h2  className={styles.center}>Popular Blogs</h2>
             </div>
             <div className="blog">
               <div className="blogItems">
-                <h1>How to Learn javascript in 2024?</h1>
+                <h3>How to Learn javascript in 2024?</h3>
                 <p>This is a blog to learn javascript from starting to advance</p>
               </div>
             </div>
             <div className="blog">
               <div className="blogItems">
-                <h1>How to Learn javascript in 2024?</h1>
+                <h3>How to Learn javascript in 2024?</h3>
                 <p>This is a blog to learn javascript from starting to advance</p>
               </div>
             </div>
             <div className="blog">
               <div className="blogItems">
-                <h1>How to Learn javascript in 2024?</h1>
+                <h3>How to Learn javascript in 2024?</h3>
                 <p>This is a blog to learn javascript from starting to advance</p>
               </div>
             </div>
             <div className="blog">
               <div className="blogItems">
-                <h1>How to Learn javascript in 2024?</h1>
+                <h3>How to Learn javascript in 2024?</h3>
                 <p>This is a blog to learn javascript from starting to advance</p>
               </div>
             </div>
