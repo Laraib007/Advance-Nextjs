@@ -15,7 +15,16 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <nav className={styles.mainNav}>
+          <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Blog</li>
+            <li>Contact</li>
+          </ul>
+        </nav>
       <main className={`${styles.main} ${inter.className}`}>
+    
         <div>
         <h1 className={styles.center}>
         Hunting Coder
