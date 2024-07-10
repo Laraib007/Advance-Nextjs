@@ -15,15 +15,38 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Script src="/sc.js"></Script>
       <main className={`${styles.main} ${inter.className}`}>
         <div>
         <h1 className={styles.center}>
         Hunting Coder
         </h1>
             <p >
-              A Blo for Hunting Coder By a hunting coder
+              A Blog for Hunting Coder By a hunting coder
             </p>
+            </div>
+            <div className="blog">
+              <div className="blogItems">
+                <h1>How to Learn javascript in 2024?</h1>
+                <p>This is a blog to learn javascript from starting to advance</p>
+              </div>
+            </div>
+            <div className="blog">
+              <div className="blogItems">
+                <h1>How to Learn javascript in 2024?</h1>
+                <p>This is a blog to learn javascript from starting to advance</p>
+              </div>
+            </div>
+            <div className="blog">
+              <div className="blogItems">
+                <h1>How to Learn javascript in 2024?</h1>
+                <p>This is a blog to learn javascript from starting to advance</p>
+              </div>
+            </div>
+            <div className="blog">
+              <div className="blogItems">
+                <h1>How to Learn javascript in 2024?</h1>
+                <p>This is a blog to learn javascript from starting to advance</p>
+              </div>
             </div>
       </main>
     </>
