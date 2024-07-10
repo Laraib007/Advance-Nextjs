@@ -222,4 +222,12 @@
 
 .mainNav ul{
   display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.mainNav ul li{
+ margin: 12px 23px;
+ list-style: none;
+ font-weight: bold;
 }
