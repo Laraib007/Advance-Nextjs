@@ -3,7 +3,6 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import styles1 from "../styles/Home1.module.css";
-import About from "./about";
 import Script from "next/script";
 import Link from "next/link";
 const inter = Inter({ subsets: ["latin"] });
@@ -27,7 +26,6 @@ export default function Home() {
           </ul>
         </nav>
       <main className={`${styles.main} ${inter.className}`}>
-        <About />
         <div>
         <h1 className={styles.center}>
         <span className="span1">Hunting Coder</span>
