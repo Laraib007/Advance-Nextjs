@@ -8,6 +8,14 @@
   justify-content: flex-start;
   padding-top: 1rem;
 }
+.container{
+  margin-left: 6rem;
+  padding: 0.22rem;
+  width: 80%;
+}
+.main h3{
+  padding: 0.4rem;
+}
 
 .description {
   display: inherit;
