@@ -2,17 +2,13 @@ import { useRouter } from "next/router"
 import styles from "@/styles/Home.module.css";
 import { useEffect, useState } from "react";
 
-export default function Slug (){
-    const [blog, setBlog] = useState([])
+export default function Slug (props){
+    const [blog, setBlog] = useState(props.myBlogs)
     const router = useRouter()
   useEffect(()=>{
     if(!router.isReady) return
     const {slug} = router.query
-    fetch(`http://localhost:3000/api/getblogs?slug=${slug}`).then((a)=>{
-      return a.json()})
-      .then((parsed)=>{
-        setBlog(parsed)
-      })
+   
   },[router.isReady])
     return(
         <main className={`${styles.main}`}>
@@ -25,4 +21,10 @@ export default function Slug (){
         </div>
         </main>
     )
+}
+export async function getServerSideProps(context){
+  const {slug} = context.query;
+  const data = await fetch(`http://localhost:3000/api/getblogs?slug=${slug}`)
+  const myBlogs = await data.json()
+    return { props: {myBlogs} }
 }

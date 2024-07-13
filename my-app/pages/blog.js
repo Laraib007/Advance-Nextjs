@@ -1,19 +1,12 @@
 import styles from "@/styles/Home.module.css";
+
 import { Inter } from "next/font/google";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
 
-export default function Blog (){
-  const [blog, setBlog] = useState([])
-  useEffect(()=>{
-    fetch("http://localhost:3000/api/blogs").then((a)=>{
-      return a.json()})
-      .then((parsed)=>{
-        setBlog(parsed)
-      })
-  },[])
-
+export default function Blog (props){
+  const [blog, setBlog] = useState(props.myBlogs)
     return(
         <main className={`${styles.main} `}>
           {blog.map((blogD)=>{
@@ -30,4 +23,10 @@ export default function Blog (){
           })}
 </main>
     )
+}
+
+export async function getServerSideProps(){
+  const data = await fetch("http://localhost:3000/api/blogs")
+  const myBlogs = await data.json()
+    return { props: {myBlogs} }
 }
