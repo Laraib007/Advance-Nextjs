@@ -28,3 +28,20 @@ export async function getServerSideProps(context){
   const myBlogs = await data.json()
     return { props: {myBlogs} }
 }
+
+export const getStaticPaths = (async () => {
+  return {
+    paths: [
+      {
+        params: [
+          {params: {slug: "java"}},
+          {params: {slug: "javascript"}},
+          {params: {slug: "java"}}
+        ],
+      }]}})
+
+export const getStaticProps = (async (context) => {
+  const res = await fetch('https://api.github.com/repos/vercel/next.js')
+  const repo = await res.json()
+  return { props: { repo } }
+})
