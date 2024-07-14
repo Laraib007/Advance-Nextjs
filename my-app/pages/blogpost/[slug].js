@@ -1,6 +1,7 @@
 import { useRouter } from "next/router"
 import styles from "@/styles/Home.module.css";
 import { useEffect, useState } from "react";
+import fs from 'fs'
 
 export default function Slug (props){
     const [blog, setBlog] = useState(props.myBlogs)
@@ -22,12 +23,7 @@ export default function Slug (props){
         </main>
     )
 }
-export async function getServerSideProps(context){
-  const {slug} = context.query;
-  const data = await fetch(`http://localhost:3000/api/getblogs?slug=${slug}`)
-  const myBlogs = await data.json()
-    return { props: {myBlogs} }
-}
+
 
 export const getStaticPaths = (async () => {
   return {
@@ -36,12 +32,12 @@ export const getStaticPaths = (async () => {
         params: [
           {params: {slug: "java"}},
           {params: {slug: "javascript"}},
-          {params: {slug: "java"}}
-        ],
+          {params: {slug: "learn"}}
+        ], fafallback: true,
       }]}})
 
 export const getStaticProps = (async (context) => {
-  const res = await fetch('https://api.github.com/repos/vercel/next.js')
-  const repo = await res.json()
-  return { props: { repo } }
+  const {slug} = context.params;
+  const myBlogs = await fs.promises.readFile((`blogdata/${slug}.json`), "utf-8")
+    return { props: {myBlogs: JSON.parse(myBlogs)} }
 })

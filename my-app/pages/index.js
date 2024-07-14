@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 const inter = Inter({ subsets: ["latin"] });
@@ -20,7 +19,7 @@ export default function Home() {
         <h1 className={styles.center}>
         <span className="span1">Hunting Coder</span>
         </h1>
-        <Image className={styles.imgSty} src="/codingImg.jpg" width={310} height={160}></Image>
+        <img className={styles.imgSty} src="/codingImg.jpg" width={310} height={160}></img>
             <p className={styles.center} >
               A Blog for Hunting Coder By a hunting coder
             </p>

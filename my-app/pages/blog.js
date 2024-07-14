@@ -25,8 +25,15 @@ export default function Blog (props){
     )
 }
 
-export async function getServerSideProps(){
-  const data = await fetch("http://localhost:3000/api/blogs")
-  const myBlogs = await data.json()
-    return { props: {myBlogs} }
-}
+
+  export async function getStaticProps(){
+    let data = await fs.promises.readdir("blogdata")
+    let myfiles;
+    let allBlogs = [];
+    for(let i = 0; i < data.length; i++){
+      const items = data[i]
+       myfiles = await fs.promises.readFile((`blogdata/`+ items), "utf-8")
+      allBlogs.push(JSON.parse(myfiles))
+    }
+      return { props: {allBlogs} }
+  }
