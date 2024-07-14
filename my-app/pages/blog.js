@@ -1,4 +1,5 @@
 import styles from "@/styles/Home.module.css";
+import fs from 'fs'
 
 import { Inter } from "next/font/google";
 import Link from "next/link";
@@ -6,7 +7,7 @@ import { useEffect, useState } from "react";
 
 
 export default function Blog (props){
-  const [blog, setBlog] = useState(props.myBlogs)
+  const [blog, setBlog] = useState(props.allBlogs)
     return(
         <main className={`${styles.main} `}>
           {blog.map((blogD)=>{

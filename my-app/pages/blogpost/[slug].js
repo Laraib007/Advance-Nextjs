@@ -28,13 +28,12 @@ export default function Slug (props){
 export const getStaticPaths = (async () => {
   return {
     paths: [
-      {
-        params: [
           {params: {slug: "java"}},
           {params: {slug: "javascript"}},
           {params: {slug: "learn"}}
-        ], fafallback: true,
-      }]}})
+      ],
+       fallback: true,
+    }})
 
 export const getStaticProps = (async (context) => {
   const {slug} = context.params;
