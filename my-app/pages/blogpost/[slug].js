@@ -4,6 +4,9 @@ import { useEffect, useState } from "react";
 import fs from 'fs'
 
 export default function Slug (props){
+  function createMarkup() {
+    return {__html: 'First &middot; Second'};
+  }
     const [blog, setBlog] = useState(props.myBlogs)
     const router = useRouter()
   useEffect(()=>{
@@ -17,7 +20,7 @@ export default function Slug (props){
         <h1 className={styles.center}>
         <span className="span1">{blog && blog.title} </span>
         </h1>
-        <p className={`${styles.container} `}>{blog && blog.des}</p>
+        {blog && <div dangerouslySetInnerHTML={createMarkup()} />}
         <p className={`${styles.container} `}>{blog && blog.author}</p>
         </div>
         </main>
