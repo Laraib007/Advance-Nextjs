@@ -15,7 +15,7 @@ export default function Blog (props){
              <div> <div className="blog">
         <div className="blogItems">
           <h3> <Link href={`/blogpost/${blogD.slug}`}>{blogD.title}</Link></h3>
-          <p>{blogD.des}</p>
+          <p>{blogD.author}</p>
           <h4>By Mr.{blogD.author}</h4>
         </div>
       </div>
