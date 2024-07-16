@@ -23,6 +23,7 @@ export default function Contact (){
       .then(response => response.text())
       .then(data => {
         console.log('success', data)
+        alert("Thanks For Contacting Us")
       })
       .catch((error) =>{
         console.log(error, "Error")
