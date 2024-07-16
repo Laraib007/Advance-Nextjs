@@ -1,4 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,532;1,532&display=swap');
+
+
 .container{
+    font-family: "Exo 2";
     max-width: 45vw;
     margin: 45px auto;
 }
@@ -10,5 +14,5 @@
 }
 .ulDs{
     margin-left: 45px;
-    margin-top: 8px;
+    margin-top: 15px;
 }

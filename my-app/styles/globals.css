@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,532;1,532&display=swap');
 :root {
+  
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
@@ -74,6 +76,7 @@
 }
 
 * {
+  font-family: "Exo 2";
   box-sizing: border-box;
   padding: 0;
   margin: 0;
