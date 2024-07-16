@@ -1,3 +1,6 @@
+import Head from "next/head";
+
+
 export default function Blog (){
     return(
         <>
@@ -5,7 +8,8 @@ export default function Blog (){
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"/>
   
         </Head>
-        <div><div className="mb-3">
+        <form>
+        <div  class="mb-3 container"><div className="mb-3">
         <label for="exampleFormControlInput1" className="form-label">Email address</label>
         <input type="name" className="form-control" name="name" id="name" placeholder="Enter Your Name"/>
       </div>
@@ -20,7 +24,10 @@ export default function Blog (){
       <div className="mb-3">
         <label for="exampleFormControlTextarea1" className="form-label">Example textarea</label>
         <textarea className="form-control" type="desc" id="desc" name="desc" rows="3"/>
-      </div></div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+      </form>
       </>
     )
 }
