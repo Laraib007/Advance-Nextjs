@@ -24,6 +24,10 @@ export default function Contact (){
       .then(data => {
         console.log('success', data)
         alert("Thanks For Contacting Us")
+        setname('')
+        setemail('')
+        setphone('')
+        setdesc('')
       })
       .catch((error) =>{
         console.log(error, "Error")
