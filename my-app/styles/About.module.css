@@ -2,3 +2,13 @@
     max-width: 45vw;
     margin: 45px auto;
 }
+.heading1{
+    text-align: center;
+}
+.heading2{
+    margin: 12px auto;
+}
+.ulDs{
+    margin-left: 45px;
+    margin-top: 8px;
+}
