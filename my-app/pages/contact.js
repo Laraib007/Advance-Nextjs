@@ -73,7 +73,7 @@ export default function Contact (){
         <label for="exampleFormControlTextarea1" className="form-label">Write your query</label>
         <textarea className="form-control" onChange={handleChange} type="desc" id="desc" name="desc" value={desc} rows="3"/>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-outline-secondary">Submit</button>
       </div>
       </form>
       </>
