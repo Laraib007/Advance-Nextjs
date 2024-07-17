@@ -8,21 +8,23 @@ import { useEffect, useState } from "react";
 
 export default function Blog (props){
   const [blog, setBlog] = useState(props.allBlogs)
+  const loadFunc =()=>{
+    setBlog(data)
+  }
+
+
+
     return(
         <main className={`${styles.main} `}>
 
 
 <InfiniteScroll
-    pageStart={0}
+    pageStart={Blog.length}
     loadMore={loadFunc}
     hasMore={true || false}
     loader={<div className="loader" key={0}>Loading ...</div>}
 >
-    
-</InfiniteScroll>
-
-
-          {blog.map((blogD)=>{
+{blog.map((blogD)=>{
             return <>
              <div> <div className="blog">
         <div className="blogItems">
@@ -34,6 +36,10 @@ export default function Blog (props){
       </div>
             </>
           })}
+</InfiniteScroll>
+
+
+         
 </main>
     )
 }
