@@ -10,6 +10,18 @@ export default function Blog (props){
   const [blog, setBlog] = useState(props.allBlogs)
     return(
         <main className={`${styles.main} `}>
+
+
+<InfiniteScroll
+    pageStart={0}
+    loadMore={loadFunc}
+    hasMore={true || false}
+    loader={<div className="loader" key={0}>Loading ...</div>}
+>
+    
+</InfiniteScroll>
+
+
           {blog.map((blogD)=>{
             return <>
              <div> <div className="blog">
