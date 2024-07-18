@@ -1,21 +1,33 @@
 import styles from "@/styles/Home.module.css";
 import fs from 'fs' 
 import InfiniteScroll from 'react-infinite-scroll-component';
-import { Inter } from "next/font/google";
+
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import {useState } from "react";
 
 
 export default function Blog (props){
   const [blog, setBlog] = useState(props.allBlogs)
   const [count, setCount]= useState(2)
+
   const fetchData = async ()=>{
     let d = await fetch(`http://localhost:3000/api/blogs/?count=${count+2}`)
     setCount(count + 2)
     let data = d.json()
     setBlog(data)
   }
-
+  
+ const blogs = blog.map((blogD)=>{
+    return <>
+     <div> <div className="blog">
+<div className="blogItems">
+  <h3> <Link href={`/blogpost/${blogD.slug}`}>{blogD.title}</Link></h3>
+  <h4>By Mr.{blogD.author}</h4>
+</div>
+</div>
+</div>
+    </>
+  })
 
 
     return(
@@ -33,18 +45,10 @@ export default function Blog (props){
     </p>
     }
 >
-  
-{blog.map((blogD)=>{
-            return <>
-             <div> <div className="blog">
-        <div className="blogItems">
-          <h3> <Link href={`/blogpost/${blogD.slug}`}>{blogD.title}</Link></h3>
-          <h4>By Mr.{blogD.author}</h4>
-        </div>
-      </div>
-      </div>
-            </>
-          })}
+{ 
+ blogs
+}
+
 </InfiniteScroll>
 
 
