@@ -21,10 +21,16 @@ export default function Blog (props){
 
 
 <InfiniteScroll
-    pageStart={blog.length}
-    loadMore={loadFunc}
-    hasMore={true || false}
+    dataLength={blog.length}
+    next={loadFunc}
+    hasMore={true}
     loader={<div className="loader" key={0}>Loading ...</div>}
+    endMessage={
+      <p style={{textAlign: "center"}}><p>
+        Yeah You Have seen it All!
+      </p>
+      </p>
+    }
 >
 {blog.map((blogD)=>{
             return <>
