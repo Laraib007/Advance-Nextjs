@@ -1,6 +1,6 @@
 import styles from "@/styles/Home.module.css";
 import fs from 'fs'
-
+import InfiniteScroll from 'react-infinite-scroller';
 import { Inter } from "next/font/google";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -21,7 +21,7 @@ export default function Blog (props){
 
 
 <InfiniteScroll
-    pageStart={Blog.length}
+    pageStart={blog.length}
     loadMore={loadFunc}
     hasMore={true || false}
     loader={<div className="loader" key={0}>Loading ...</div>}
