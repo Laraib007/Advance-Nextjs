@@ -17,7 +17,6 @@ export default function Blog (props){
     setBlog(data)
   }
 
-console.log(typeof(blog))
     return(
         <main className={`${styles.main} `}>
 
@@ -34,7 +33,8 @@ console.log(typeof(blog))
     }
 >
 { 
- blog.map(blogD=>{
+
+blog?.map(blogD=>{
       return <>
        <div> <div className="blog">
   <div className="blogItems">
@@ -61,7 +61,7 @@ console.log(typeof(blog))
     let allCount = data.length;
     let myfiles;
     let allBlogs = [];
-    for(let i = 0; i < 5; i++){
+    for(let i = 0; i < data.length; i++){
       const items = data[i]
        myfiles = await fs.promises.readFile((`blogdata/`+ items), "utf-8")
       allBlogs.push(JSON.parse(myfiles))
