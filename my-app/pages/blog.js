@@ -8,7 +8,9 @@ import { useEffect, useState } from "react";
 
 export default function Blog (props){
   const [blog, setBlog] = useState(props.allBlogs)
-  const loadFunc =()=>{
+  const loadFunc = async ()=>{
+    let d = await fetch(`http://localhost:3000/api/blogs/?count=${3}`)
+    let data = d.json()
     setBlog(data)
   }
 
