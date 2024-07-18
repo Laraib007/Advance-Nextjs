@@ -10,7 +10,7 @@ export default function Blog (props){
   const [blog, setBlog] = useState(props.allBlogs)
   const [count, setCount]= useState(2)
   const fetchData = async ()=>{
-    let d = await fetch(`http://localhost:3000/api/blogs/?count=${count +2}`)
+    let d = await fetch(`http://localhost:3000/api/blogs/?count=${count+2}`)
     setCount(count + 2)
     let data = d.json()
     setBlog(data)
@@ -26,12 +26,11 @@ export default function Blog (props){
     dataLength={blog.length}
     next={fetchData}
     hasMore={props.allCount !== blog.length}
-    loader={<div>Loading ...</div>}
-    endMessage={
-      <p style={{textAlign: "center"}}><p>
-        Yeah You Have seen it All!
-      </p>
-      </p>
+    loader={<h4>Loading...</h4>}
+  endMessage={
+    <p style={{ textAlign: 'center' }}>
+      <b>Yay! You have seen it all</b>
+    </p>
     }
 >
 {blog.map((blogD)=>{
