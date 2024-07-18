@@ -17,23 +17,7 @@ export default function Blog (props){
     setBlog(data)
   }
 
-
-    const blogs = blog && blog.map(blogD=>{
-      return <>
-       <div> <div className="blog">
-  <div className="blogItems">
-    <h3> <Link href={`/blogpost/${blogD.slug}`}>{blogD.title}</Link></h3>
-    <h4>By Mr.{blogD.author}</h4>
-  </div>
-  </div>
-  </div>
-      </>
-    })
-
-  
-
-
-
+console.log(typeof(blog))
     return(
         <main className={`${styles.main} `}>
 
@@ -50,7 +34,17 @@ export default function Blog (props){
     }
 >
 { 
- blogs
+ blog.map(blogD=>{
+      return <>
+       <div> <div className="blog">
+  <div className="blogItems">
+    <h3> <Link href={`/blogpost/${blogD.slug}`}>{blogD.title}</Link></h3>
+    <h4>By Mr.{blogD.author}</h4>
+  </div>
+  </div>
+  </div>
+      </>
+    })
 }
 
 </InfiniteScroll>
