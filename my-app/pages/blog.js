@@ -1,6 +1,6 @@
 import styles from "@/styles/Home.module.css";
-import fs from 'fs'
-import InfiniteScroll from 'react-infinite-scroller';
+import fs from 'fs' 
+import InfiniteScroll from 'react-infinite-scroll-component';
 import { Inter } from "next/font/google";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -33,6 +33,7 @@ export default function Blog (props){
     </p>
     }
 >
+  
 {blog.map((blogD)=>{
             return <>
              <div> <div className="blog">
