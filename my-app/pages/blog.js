@@ -3,7 +3,7 @@ import fs from 'fs'
 import InfiniteScroll from 'react-infinite-scroll-component';
 
 import Link from "next/link";
-import {useState } from "react";
+import {useEffect, useState } from "react";
 
 
 export default function Blog (props){
@@ -16,18 +16,22 @@ export default function Blog (props){
     let data = d.json()
     setBlog(data)
   }
+
+
+    const blogs = blog && blog.map(blogD=>{
+      return <>
+       <div> <div className="blog">
+  <div className="blogItems">
+    <h3> <Link href={`/blogpost/${blogD.slug}`}>{blogD.title}</Link></h3>
+    <h4>By Mr.{blogD.author}</h4>
+  </div>
+  </div>
+  </div>
+      </>
+    })
+
   
- const blogs = blog.map((blogD)=>{
-    return <>
-     <div> <div className="blog">
-<div className="blogItems">
-  <h3> <Link href={`/blogpost/${blogD.slug}`}>{blogD.title}</Link></h3>
-  <h4>By Mr.{blogD.author}</h4>
-</div>
-</div>
-</div>
-    </>
-  })
+
 
 
     return(
@@ -63,7 +67,7 @@ export default function Blog (props){
     let allCount = data.length;
     let myfiles;
     let allBlogs = [];
-    for(let i = 0; i < 2; i++){
+    for(let i = 0; i < 5; i++){
       const items = data[i]
        myfiles = await fs.promises.readFile((`blogdata/`+ items), "utf-8")
       allBlogs.push(JSON.parse(myfiles))
