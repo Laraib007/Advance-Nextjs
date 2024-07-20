@@ -56,6 +56,7 @@ blog?.map(blogD=>{
 }
 
 
+
   export async function getStaticProps(){
     let data = await fs.promises.readdir("blogdata")
     let allCount = data.length;
